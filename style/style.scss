@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  overflow: hidden;
+}
+
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.stickyNav {
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    width: 38px;
+    height: 57px;
+  }
+  .buttonWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    .button {
+      &--type-filled {
+        margin-left: 8px;
+      }
+    }
+  }
+  &--view-mobile {
+    display: none;
+    .buttonWrapper {
+      align-items: center;
+    }
+  }
+}
+
+
+
+.button {
+  font-size: 18px;
+  &--type {
+    &-text {
+      padding: 16px 8px;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+    &-filled {
+      padding: 14px 24px;
+      border-radius: 10px;
+      background-color: black;
+      font-weight: 700;
+      line-height: 1;
+      color: white;
+    }
+    &-onlyIcon {
+      margin-left: 24px
+      width: 24px;
+      height: 24px;
+      background-color: black;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  &__contents {
+    padding-inline: 48px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .catch {
+      max-width: 790px;
+      min-height: 285px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .desc {
+      margin-bottom: 40px;
+      max-width: 600px;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.3;
+      text-align: center;
+    }
+  }
+  &__image {
+    width: 1440px;
+    height: 581px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.partners {
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .wrapper {
+    padding: 32px 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+
+    .desc {
+      max-width: 420px;
+    } //글이 정말 많을 때  max-width를 넣으면 좋다 텍스트80~160자정도가 가로로 늘어져 있는게 좋음
+    //5ch는 5글자가 들어가게 만든다 ch는 폰트개수에 따라 잡아줌
+    .iconWrapper {
+      margin-inline: 104px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 48px;
+      .icon {
+        width: 64px;
+        aspect-ratio: 1/ 1; //화면 가로세로 높이비율 유용!!!!
+        background-color: black;
+      }
+    }
+    .icon--type-more {
+      width: 32px;
+      aspect-ratio: 1/ 1;
+      background-color: black;
+    }
+  }
+}
+
+.features {
+  position: relative;
+  padding-inline: 48px;
+  &__sticky {
+    position: sticky;
+    top: 32px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    .button {
+      padding: 6px 16px;
+      border: 1px solid black;
+      border-radius: 1e9px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+  }
+  &__grid {
+    max-width: 1280px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(auto, 400px) auto;
+    grid-template-rows: repeat(6, 100vh);
+    column-gap: 60px;
+    grid-auto-flow: column;
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .title {
+    margin-bottom: 22px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .desc {
+    margin-bottom: 22px;
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .textButton {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+}
+
+.quote {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px #eee;
+  font-size: 18px;
+  line-height: 1.4;
+  .desc {
+    margin-bottom: 16px;
+  }
+  .profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    .pic {
+      width: 50px;
+      aspect-ratio: 1 / 1;
+      background-color: aqua;
+    }
+    .textWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .name {
+        font-weight: 700;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .stickyNav--view-desktop {
+    display: none;
+  }
+  .stickyNav--view-desktop {
+    display: flex;
+  }
+}
+
+@media (mx-width: 1300px) {
+  .partners {
+    .iconWrapper {
+      .icon:nth-child(5) {
+        display: none;
+      }
+    }
+  }
+}
